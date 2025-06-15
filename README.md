@@ -31,12 +31,6 @@ python unifi-get-ssid-info.py
 - Python 3.8+
 - Abhängigkeiten: siehe [requirements.txt](./unifi/requirements.txt)
 
-Installation der Abhängigkeiten:
-
-```bash
-pip install -r requirements.txt
-```
-
 ---
 
 ## 📂 Ordner: `vmware`
