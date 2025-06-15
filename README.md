@@ -1,11 +1,11 @@
 
 # HG Tools
 
-Dieses Repository enthält verschiedene Hilfsskripte für Systemadministration und IT-Infrastruktur. Die Skripte sind thematisch in folgende Bereiche gegliedert:
+Dieses Repository enthält verschiedene Hilfsskripte für mich selbst. Die Skripte sind thematisch in folgende Bereiche gegliedert:
 
-- `unifi/` – Skripte zur Abfrage und Verwaltung von UniFi-Controllern
-- `vmware/` – Automatisierungen und Abfragen für VMware-Umgebungen
-- `veeam/` – Hilfen für Backup-Management mit Veeam
+- `unifi/` – Hilfen für Unifi Network Controller
+- `vmware/` – Hilfen für ESXi
+- `veeam/` – Hilfen für Veeam B&R
 
 ---
 
@@ -32,7 +32,7 @@ hg-tools/
 ### 🔍 Skript: `unifi-get-ssid-info.py`
 
 **Zweck:**  
-Das Skript stellt eine Verbindung zu einem UniFi Controller her, liest die aktuelle Controller-Version, alle Sites sowie alle adoptieren Access Points aus und speichert folgende Informationen in eine CSV-Datei:
+Das Skript stellt eine Verbindung zu einem UniFi Controller her, liest alle Sites sowie alle adoptieren AccessPoints aus und speichert folgende Informationen in eine CSV-Datei:
 
 - Site-Name
 - Access Point Name
@@ -76,13 +76,13 @@ pip install -r requirements.txt
 
 ## 📂 Ordner: `vmware`
 
-> In Arbeit – Hier sollen Skripte zur Abfrage und Automatisierung von vSphere-/ESXi-Umgebungen entstehen (z. B. VM-Status, Snapshots, Hostinformationen).
+> In Arbeit...
 
 ---
 
 ## 📂 Ordner: `veeam`
 
-> In Arbeit – Geplant sind Skripte zur Auswertung von Backup-Jobs, Reportings oder Benachrichtigungen auf Basis der Veeam REST-API.
+> In Arbeit...
 
 ---
 
@@ -94,4 +94,4 @@ MIT License – frei zur privaten und beruflichen Nutzung.
 
 ## 🙋 Support
 
-Pull Requests und Issues sind willkommen!
+Gibt es nicht ;)
