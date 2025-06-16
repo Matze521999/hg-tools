@@ -10,7 +10,7 @@ Für einen speziellen Kunden:
 
     .\servereye_win11_upgradeauswertung.ps1 -ApiKey "<DEIN_API_KEY>" -CustomerID "<CID>"
 
-
+---
 
 # ServerEye Windows 11 Upgradeauswertung
 
