@@ -1,3 +1,17 @@
+# TL;DR
+    
+    Install-Module ServerEye.Powershell.Helper, ImportExcel -Scope CurrentUser
+
+Für alle Kunden:
+    
+    .\servereye_win11_upgradeauswertung.ps1 -ApiKey "<DEIN_API_KEY>"
+
+Für einen speziellen Kunden:
+
+    .\servereye_win11_upgradeauswertung.ps1 -ApiKey "<DEIN_API_KEY>" -CustomerID "<CID>"
+
+
+
 # ServerEye Windows 11 Upgradeauswertung
 
 Dieses PowerShell-Skript dient der systematischen Auswertung von Sensorhubs eines ServerEye-Kunden im Hinblick auf ihre Windows 11-Kompatibilität. Es aggregiert die folgenden Informationen in einer Excel-Datei pro Kunde:
