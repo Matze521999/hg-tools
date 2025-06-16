@@ -1,12 +1,3 @@
-
-# HG Tools
-
-Dieses Repository enthält verschiedene Hilfsskripte für mich selbst.
-
----
-
-## 📂 Ordner: `unifi`
-
 ### 🔍 Skript: `unifi-get-ssid-info.py`
 
 **Zweck:**  
@@ -30,24 +21,6 @@ python unifi-get-ssid-info.py
 
 - Python 3.8+
 - Abhängigkeiten: siehe [requirements.txt](./unifi/requirements.txt)
-
----
-
-## 📂 Ordner: `vmware`
-
-> In Arbeit...
-
----
-
-## 📂 Ordner: `veeam`
-
-> In Arbeit...
-
----
-
-## 📜 Lizenz
-
-MIT License – frei zur privaten und beruflichen Nutzung.
 
 ---
 
