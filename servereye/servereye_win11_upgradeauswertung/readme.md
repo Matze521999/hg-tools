@@ -49,15 +49,18 @@ Die Auswertung erfolgt automatisch für alle dir zugewiesenen Kunden. Standardm�
 
 Du kannst das Skript mit einem selbstsignierten Zertifikat signieren, z. B. zur Nutzung auf Systemen mit aktiviertem Execution Policy Enforcement (nicht vergessen den Pfad anzupassen!):
 
-    New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Matze" -CertStoreLocation "cert:\CurrentUser\My"
 
-    $cert = Get-ChildItem -Path Cert:\CurrentUser\My | Where-Object { $_.Subject -eq "CN=Matze" }
+    $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=Matze" -CertStoreLocation "cert:\CurrentUser\My"
+
+    Start-Sleep -Seconds 2
     Export-Certificate -Cert $cert -FilePath "$env:TEMP\codesign.cer"
     Import-Certificate -FilePath "$env:TEMP\codesign.cer" -CertStoreLocation Cert:\CurrentUser\Root
+    Import-Certificate -FilePath "$env:TEMP\codesign.cer" -CertStoreLocation Cert:\CurrentUser\TrustedPublisher
     Remove-Item "$env:TEMP\codesign.cer"
-
-    $cert = Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert | Where-Object { $_.Subject -eq "CN=Matze" }
+    
     Set-AuthenticodeSignature -FilePath "C:\Pfad\zu\servereye_win11_upgradeauswertung.ps1" -Certificate $cert
+
+
 
 ---
 
