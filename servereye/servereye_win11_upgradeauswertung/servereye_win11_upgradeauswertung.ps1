@@ -116,7 +116,6 @@ try {
     Write-Host 'ApiKey falsch'
     exit
 }
-
 if ($CustomerID) {
     $Customer = $Customers | Where-Object { $_.Cid -eq $CustomerID }
     if (-not $Customer) {
@@ -127,6 +126,9 @@ if ($CustomerID) {
     Write-Host $Customer.CompanyName
     Status -Activity "1/1 Inventarisiere" -Max 1 -Counter 1 -Status $Customer.CompanyName -Id 1
     Inventory $Customer
+	
+	return
+
 } else {
     $Count = 0
     foreach ($Customer in $Customers) {
