@@ -2,8 +2,10 @@
 
 Param (
     [Parameter(Mandatory=$true)][string]$ApiKey,
-    [string]$Dest = ".\"
+    [string]$Dest = ".\",
+    [string]$CustomerID
 )
+
 
 
 function Status {
@@ -113,6 +115,26 @@ try {
 } catch {
     Write-Host 'ApiKey falsch'
     exit
+}
+
+if ($CustomerID) {
+    $Customer = $Customers | Where-Object { $_.Cid -eq $CustomerID }
+    if (-not $Customer) {
+        Write-Host "CustomerID '$CustomerID' nicht gefunden"
+        exit
+    }
+
+    Write-Host $Customer.CompanyName
+    Status -Activity "1/1 Inventarisiere" -Max 1 -Counter 1 -Status $Customer.CompanyName -Id 1
+    Inventory $Customer
+} else {
+    $Count = 0
+    foreach ($Customer in $Customers) {
+        $Count++
+        Write-Host $Customer.CompanyName
+        Status -Activity "$($Count)/$($Customers.Count) Inventarisiere" -Max $Customers.Count -Counter $Count -Status $Customer.CompanyName -Id 1
+        Inventory $Customer
+    }
 }
 
 $Count = 0
