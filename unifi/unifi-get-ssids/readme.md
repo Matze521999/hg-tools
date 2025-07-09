@@ -20,7 +20,7 @@ python unifi-get-ssid-info.py
 **Voraussetzungen:**
 
 - Python 3.8+
-- Abhängigkeiten: siehe [requirements.txt](./unifi/requirements.txt)
+- Abhängigkeiten: siehe [requirements.txt](./unifi/unifi-get-ssids/requirements.txt)
 
 ---
 
