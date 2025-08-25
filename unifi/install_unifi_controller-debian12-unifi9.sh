@@ -35,7 +35,7 @@ curl -fsSL https://pgp.mongodb.com/server-4.4.asc | gpg --dearmor -o /etc/apt/tr
 echo "=== libssl1.1 installieren ==="
 cd /tmp
 wget http://security.debian.org/debian-security/pool/updates/main/o/openssl1.1/libssl1.1_1.1.1w-0+deb11u2_amd64.deb
-apt-get install -y ./libssl1.1_1.1.1w-0+deb11u2_amd64.deb
+dpkg -i libssl1.1_1.1.1w-0+deb11u1_amd64.deb
 
 echo "=== Unifi Repository einbinden ==="
 echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list
