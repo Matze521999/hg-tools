@@ -34,7 +34,7 @@ curl -fsSL https://pgp.mongodb.com/server-4.4.asc | gpg --dearmor -o /etc/apt/tr
 
 echo "=== libssl1.1 installieren ==="
 cd /tmp
-wget http://security.debian.org/debian-security/pool/updates/main/o/openssl1.1/libssl1.1_1.1.1w-0+deb11u2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl1.1_1.1.1w-0+deb11u1_amd64.deb
 dpkg -i libssl1.1_1.1.1w-0+deb11u1_amd64.deb
 
 echo "=== Unifi Repository einbinden ==="
