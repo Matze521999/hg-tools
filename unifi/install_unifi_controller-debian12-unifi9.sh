@@ -39,7 +39,7 @@ dpkg -i libssl1.1_1.1.1w-0+deb11u1_amd64.deb
 
 echo "=== Unifi Repository einbinden ==="
 echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list
-wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifirepo.gpg
+wget -O /etc/apt/trusted.gpg.d/unifi-repo.gpg https://dl.ui.com/unifi/unifi-repo.gpg
 
 echo "=== Unifi 9 Installation starten ==="
 apt-get update
