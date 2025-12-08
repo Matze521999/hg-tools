@@ -1,18 +1,19 @@
 #!/bin/bash
 
+##############################################################################################################################################
+# Dieses Script sucht nach Tunnelpaaren (*.conf + *.key) überprüft deren Status (läuft + läuft als Service), und bietet ggf. einen Start an. #
+##############################################################################################################################################
+
 # Verzeichnis mit OpenVPN-Dateien
 DIR="${1:-/etc/openvpn}"
-
-OUTPUT="openvpn_tunnel_status.txt"
-> "$OUTPUT"
 
 # Farben für Konsole
 RED="\e[31m"
 GREEN="\e[32m"
 NC="\e[0m"   # No Color
 
-printf "%-20s %-10s %-15s %-12s\n" "NAME" "PAIR" "SERVICE" "ENABLED" | tee -a "$OUTPUT"
-printf "%-20s %-10s %-15s %-12s\n" "--------------------" "----------" "---------------" "------------" | tee -a "$OUTPUT"
+printf "%-20s %-10s %-15s %-12s\n" "NAME" "PAIR" "SERVICE" "ENABLED"
+printf "%-20s %-10s %-15s %-12s\n" "--------------------" "----------" "---------------" "------------"
 
 shopt -s nullglob
 
@@ -62,8 +63,7 @@ for conf_file in "$DIR"/*.conf; do
 
     # Konsole (farbig)
     printf "%-20s %-10s %-15b %-12b\n" "$name" "$pair_status" "$svc_out" "$enabled_out"
-    # Datei (ohne Farben)
-    printf "%-20s %-10s %-15s %-12s\n" "$name" "$pair_status" "$svc_status" "$enabled_status" >> "$OUTPUT"
+
 done
 
 ##############################################
@@ -81,7 +81,6 @@ for key_file in "$DIR"/*.key; do
         enabled_status="-"
 
         printf "%-20s %-10s %-15s %-12s\n" "$name" "$pair_status" "-" "-" 
-        printf "%-20s %-10s %-15s %-12s\n" "$name" "$pair_status" "$svc_status" "$enabled_status" >> "$OUTPUT"
     fi
 done
 
@@ -142,4 +141,4 @@ else
 fi
 
 echo
-echo "Fertig. Übersicht in: $OUTPUT"
+echo "Fertig."
