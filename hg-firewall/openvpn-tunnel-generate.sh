@@ -270,5 +270,7 @@ else
     echo "Kopie für pchfw:"
     echo "  ${CLIENT_DIR}/${NEW_NAME}.conf"
     echo "  ${CLIENT_DIR}/${NEW_NAME}.key"
+    echo
+    echo
     echo "${RED}tun-device und Port unter /etc/sysconfig/SuSEfirewall2 freigeben nicht vergessen!.${NC}"
 fi
